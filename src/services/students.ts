@@ -1,5 +1,19 @@
 import { Student } from "@/types/student";
 
+interface RandomUser {
+  name: {
+    first: string;
+    last: string;
+  };
+  picture: {
+    large: string;
+  };
+}
+
+interface RandomUserResponse {
+  results: RandomUser[];
+}
+
 export const getStudentsService = async (): Promise<Student[]> => {
   try {
     const response = await fetch(
@@ -14,10 +28,10 @@ export const getStudentsService = async (): Promise<Student[]> => {
       throw new Error("Failed to fetch students data");
     }
 
-    const data = await response.json();
-    
+    const data: RandomUserResponse = await response.json();
+
     // Transform the data to match our Student interface
-    return data.results.map((user: any, index: number) => ({
+    return data.results.map((user: RandomUser, index: number) => ({
       id: index + 1,
       firstname: user.name.first,
       lastname: user.name.last,
