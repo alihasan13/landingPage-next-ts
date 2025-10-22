@@ -29,11 +29,11 @@ const Tag = ({
 );
 
 export default function CampusesSection() {
-  const campuses = [
-    { name: "CANARY WHARF", image: "/campus-canary.png" },
-    { name: "BOROUGH", image: "/campus-borough.png" },
-    { name: "MANCHESTER", image: "/campus-manchester.png" },
-  ];
+  // const campuses = [
+  //   { name: "CANARY WHARF", image: "/campus-canary.png" },
+  //   { name: "BOROUGH", image: "/campus-borough.png" },
+  //   { name: "MANCHESTER", image: "/campus-manchester.png" },
+  // ];
 
   return (
     <section className="bg-[#0a0e27] relative ">
